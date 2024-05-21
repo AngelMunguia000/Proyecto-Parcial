@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container-hero">
+            <div class="container hero">
+                <div class="container-logo">
+                    <img src="https://www.oxxo.com/img/logo-r.png" alt="container-logo-OXXO">
+                </div>
+                <div class="container-user">
+                    <span id="userNameDisplay" class="user-name"></span> <!-- Asegúrate de que este valor se actualice correctamente -->
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <div class="content-shopping-cart">
+                        <span class="text">Carrito</span>
+                        <span class="number">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="container cart-section">
+            <h1>Carrito de Compras</h1>
+            <div class="cart-items">
+                <!-- Aquí se mostrarán los productos del carrito -->
+            </div>
+            <div class="cart-total">
+                <h2>Total a pagar: <span id="cartTotal">$0.00</span></h2>
+                <button id="checkoutButton">Proceder al Pago</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const userNameDisplay = document.getElementById("userNameDisplay");
+
+            // Simula la obtención del nombre de usuario después de iniciar sesión
+            userNameDisplay.textContent = localStorage.getItem('username') || 'NombreUsuario'; // Almacena el nombre de usuario en localStorage
+
+            function loadCart() {
+                const username = userNameDisplay.textContent.trim();
+                if (!username) {
+                    console.error('Nombre de usuario no disponible');
+                    return;
+                }
+
+                fetch(`http://localhost:3000/cart/${username}`)
+                    .then(response => response.json())
+                    .then(cart => {
+                        const cartItemsContainer = document.querySelector('.cart-items');
+                        cartItemsContainer.innerHTML = '';
+                        let total = 0;
+
+                        cart.forEach(item => {
+                            total += item.price * item.quantity;
+                            const cartItem = document.createElement('div');
+                            cartItem.className = 'cart-item';
+                            cartItem.innerHTML = `
+                                <img src="${item.productImage}" alt="${item.productName}" class="cart-item-image">
+                                <h3>${item.productName}</h3>
+                                <p>Precio: $${item.price.toFixed(2)}</p>
+                                <p>Cantidad: ${item.quantity}</p>
+                            `;
+                            cartItemsContainer.appendChild(cartItem);
+                        });
+
+                        document.getElementById('cartTotal').textContent = `$${total.toFixed(2)}`;
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            }
+
+            loadCart();
+        });
+    </script>
+</body>
+</html>
+

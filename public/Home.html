@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo.ico">
+    <title>Sucursal OXXO Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Modal -->
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Iniciar Sesión</h2>
+            <form id="authForm">
+                <div>
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+            <p id="message"></p>
+            <p id="toggleForm">¿No tienes cuenta? <span id="toggleFormLink">Regístrate aquí</span></p>
+        </div>
+    </div>
+
+    <!-- Message Modal -->
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="messageText"></p>
+        </div>
+    </div>
+
+    <header>
+        <div class="container-hero">
+            <div class="container hero">
+                <div class="customer-support">
+                    <i class="fa-solid fa-headset"></i>
+                    <div class="content-customer-support">
+                        <span class="text">Soporte al cliente</span>
+                        <span class="number">333-969-4657</span>
+                    </div>
+                </div>
+                <div class="container-logo">
+                    <img src="https://www.oxxo.com/img/logo-r.png" alt="container-logo-OXXO">
+                </div>
+                <div class="container-user">
+                    <i id="userIcon" class="fa-solid fa-user"></i>
+                    <span id="userNameDisplay" class="user-name"></span> <!-- Aquí se mostrará el nombre del usuario -->
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <div class="content-shopping-cart">
+                        <span class="text">Carrito</span>
+                        <span class="number">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-navbar">
+            <nav class="navbar container">
+                <i class="fa-solid fa-bars"></i>
+                <ul class="menu">
+                    <li><a href="#">Cupones</a></li>
+                    <li><a href="#">Promociones</a></li>
+                    <li><a href="#">Spin premia</a></li>
+                    <li><a href="#">Andatti</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Quienes Somos</a></li>
+                </ul>
+
+                <form class="search-form">
+                    <input type="search" placeholder="Buscar...">
+                    <button class="btn-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </nav>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="content-banner">
+            <p>Con el Mejor Ambiente para realizar tu Super </p>
+            <h2>Siempre encontraras todo lo Necesario<br />O Te lo llevamos a tu Hogar.</h2>
+            <a href="#">Productos...</a>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <section class="container container-features">
+            <div class="card-feature">
+                <i class="fa-solid fa-motorcycle"></i>
+                <div class="feature-content">
+                    <span>Envío gratuito a Colonias Sercanas a un OXXO.</span>
+                    <p>En pedido superior a $399 MXN</p>
+                </div>
+            </div>
+            <div class="card-feature">
+                <i class="fa-sharp fa-solid fa-money-bill"></i>
+                <div class="feature-content">
+                    <span>Puedes Hacer Depositos o Retiros de todas las tarjetas</span>
+                    <p>También Puedes pagar Servicios de Telefonía, Agua, Luz, Internet.</p>
+                </div>
+            </div>
+            <div class="card-feature">
+                <i class="fa-solid fa-gift"></i>
+                <div class="feature-content">
+                    <span>Compra Todas tus Tarjetas de Regalo</span>
+                    <p>Incluimos: Amazon, Xbox, Playstation, Nintendo, iPhone, y Android</p>
+                </div>
+            </div>
+            <div class="card-feature">
+                <i class="fa-sharp fa-solid fa-lock"></i>
+                <div class="feature-content">
+                    <span>Horario de Servicio y Atención 24/7</span>
+                    <p>Y Para Pedidos a Domicilio Contamos También con 24/7 y Todos Los días de la Semana</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container top-products">
+            <h1 class="heading-1">Mejores Ofertas de la Semana</h1>
+
+            <div class="container-options">
+                <span class="active">Alimentos</span>
+                <span>Higiene Personal</span>
+                <span>Vinos y Licores</span>
+                <span><img src="https://www.oxxo.com/img/logo-relampago.png" alt="Relampago-logo-OXXO" height="25" class="P-1"/>Ofertas Relampago</span>
+            </div>
+
+            <div class="container-products">
+                <!-- Producto 1 -->
+                <div class="card-product" data-product-id="60e8f3b8e5e1f8b8f8f8f8f1">
+                    <div class="container-img">
+                        <img src="https://oxxo-com.s3.amazonaws.com/promociones/2024/p6/214212.png" alt="Atun-Dolores" />
+                        <div class="button-group">
+                            <span>
+                                <i class="fa-regular fa-heart"></i>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-code-compare"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h3>Pack de 2 Atun Dolores de Aceite o Agua</h3>
+                        <span class="add-cart">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </span>
+                        <p class="price">$42.99 <span>$43.99</span></p>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="card-product" data-product-id="60e8f3b8e5e1f8b8f8f8f8f2">
+                    <div class="container-img">
+                        <img src="https://oxxo-com.s3.amazonaws.com/promociones/2024/p6/214339.png" alt="frijoles-la.sierra"/>
+                        <div class="button-group">
+                            <span>
+                                <i class="fa-regular fa-heart"></i>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-code-compare"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Pack de 2 Frijoles de la Sierra, Peruanos o Bayos o Negros</h3>
+                        <span class="add-cart">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </span>
+                        <p class="price">$28.99 <span>$29.99</span></p>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="card-product" data-product-id="60e8f3b8e5e1f8b8f8f8f8f3">
+                    <div class="container-img">
+                        <img src="https://oxxo-com.s3.amazonaws.com/promociones/2024/p6/214218.png" alt="Cafe Australiano"/>
+                        <div class="button-group">
+                            <span>
+                                <i class="fa-regular fa-heart"></i>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-code-compare"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Mode Doña Maria de Diferentes Sabores de 360g</h3>
+                        <span class="add-cart">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </span>
+                        <p class="price">$22.99 <span>$23.99</span></p>
+                    </div>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="card-product" data-product-id="60e8f3b8e5e1f8b8f8f8f8f4">
+                    <div class="container-img">
+                        <img src="https://oxxo-com.s3.amazonaws.com/promociones/2024/p6/214355.png" alt="Salchiha-Viena-Duby" />
+                        <div class="button-group">
+                            <span>
+                                <i class="fa-regular fa-heart"></i>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-code-compare"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Salchicha de Viena Marca Duby de 830g</h3>
+                        <span class="add-cart">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </span>
+                        <p class="price">$40.99 <span>$41.99</span></p>
+                    </div>
+                </div>
+
+                <!-- Repite lo anterior para todos los productos, asegurándote de que cada data-product-id es único -->>
+					
+				    <!-- Producto 4 -->
+					<div class="card-product">
+						<div class="card-product" data-product-id="4"></div>
+						<div class="container-img">
+							<img src="https://oxxo-com.s3.amazonaws.com/promociones/2024/p6/214355.png" alt="Salchiha-Viena-Duby" />
+							<div class="button-group">
+								<span>
+									<i class="fa-regular fa-heart"></i>
+								</span>
+								<span>
+									<i class="fa-solid fa-code-compare"></i>
+								</span>
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-regular fa-star"></i>
+								<i class="fa-regular fa-star"></i>
+							</div>
+							<h3>Salchicha de Viena Marca Duby de 830g</h3>
+							<span class="add-cart">
+								<i class="fa-solid fa-basket-shopping"></i>
+							</span>
+							<p class="price">$40.99 <span>$41.99</span></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="gallery">
+				<img
+					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJvbS5DyqT2Nta7zIcEKhLcQKMKyxO6Prntg&usqp=CAU"
+					alt="OXXO Img1"
+					class="oxxo-img-1"
+				/><img
+					src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F68e2761a-2179-41d6-bc1c-0372b1ec9405_2520x1791.jpeg"
+					alt="OXXO Img2"
+					class="oxxo-img-2"
+				/><img
+					src="https://teetimeklever.com/wp-content/uploads/2023/02/OXXO-e1676402862704.jpeg"
+					alt="OXXO Img3"
+					class="gallery-img-3"
+				/><img
+					src="https://cdn-3.expansion.mx/dims4/default/9a008a3/2147483647/strip/true/crop/1140x713+0+0/resize/1200x751!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F1a%2F2d%2F695a1ba84b1e9aaee5fb4ce25aaf%2Fcajas-de-oxxo-foto-cortesia-1140x713.jpg"
+					alt="OXXO Img4"
+					class="oxxo-img-4"
+				/><img
+					src="https://diarioistmo.blob.core.windows.net/images/2024/03/28/portada-verdad-logo-oxxo-focus-0-0-608-342.png"
+					alt="OXXO Img5"
+					class="oxxo-img-5"
+				/>
+			</section>
+			<section class="container specials">
+				<h1 class="heading-1">Especiales de La Casa</h1>
+				<div class="container-products">
+					<!-- Producto 1 -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="https://oxxo-com.s3.amazonaws.com/promociones/2024/cVzJv4AED2XtznzC7lZUhOsns0zMtMlnD3R5Abp9.png" alt="Especial" />
+							<span class="discount">-30%</span>
+							<div class="button-group">
+								<span>
+									<i class="fa-regular fa-heart"></i>
+								</span>
+								<span>
+									<i class="fa-solid fa-code-compare"></i>
+								</span>
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+							</div>
+							<h3>Variedad de tu eleccion en Vinos y Licores.</h3>
+							<span class="add-cart">
+								<i class="fa-solid fa-basket-shopping"></i>
+							</span>
+							<p class="price">$679.99 <span>$203.99</span></p>
+						</div>
+					</div>
+					<!-- Producto 2 -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="https://oxxo-com.s3.amazonaws.com/promociones/2024/p6/214476.png" alt="Cafe incafe-ingles.jpg" />
+							<span class="discount">-30%</span>
+							<div class="button-group">
+								<span>
+									<i class="fa-regular fa-heart"></i>
+								</span>
+								<span>
+									<i class="fa-solid fa-code-compare"></i>
+								</span>
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+							</div>
+							<h3>Centenario Azul Baby Mango o Reposado 700ml</h3>
+							<span class="add-cart">
+								<i class="fa-solid fa-basket-shopping"></i>
+							</span>
+							<p class="price">$459.99 <span>$137.99</span></p>
+						</div>
+					</div>
+					<!--  -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="https://oxxo-com.s3.amazonaws.com/promociones/2024/6uUsvIx95HLEW1OBxvAfm243Ydl5LQAiTaWXpv1U.png" alt="La-sed-la-mala-pal-calor" />
+							<div class="button-group">
+								<span>
+									<i class="fa-regular fa-heart"></i>
+								</span>
+								<span>
+									<i class="fa-solid fa-code-compare"></i>
+								</span>
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+							</div>
+							<h3>Tu Buena Cervecita Sola para el calor. Preparada.</h3>
+							<span class="add-cart">
+								<i class="fa-solid fa-basket-shopping"></i>
+							</span>
+							<p class="price">$35.99 <span>$35.00</span></p>
+						</div>
+					</div>
+					<!--  -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="https://oxxo-com.s3.amazonaws.com/promociones/2024/p6/214129.png" alt="Cafe Liqueurs" />
+							<div class="button-group">
+								<span>
+									<i class="fa-regular fa-heart"></i>
+								</span>
+								<span>
+									<i class="fa-solid fa-code-compare"></i>
+								</span>
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-regular fa-star"></i>
+								<i class="fa-regular fa-star"></i>
+							</div>
+							<h3>Pack de 2 Aguas Bonafone Sabor Agua de la llave</h3>
+							<span class="add-cart">
+								<i class="fa-solid fa-basket-shopping"></i>
+							</span>
+							<p class="price">$25.99 <span>$50.99</span></p>
+					</div>
+				</div>
+			</section>
+
+			<section class="container blogs">
+				<h1 class="heading-1">Ultimas Reseña</h1>
+
+				<div class="container-blogs">
+					<div class="card-blog">
+						<div class="container-img">
+							<img src="https://sncomunica.files.wordpress.com/2022/07/2m4a3285-0893559264435228.jpg?w=1350&h=768&crop=1" alt=":D" />
+							<div class="button-group-blog">
+								<span>
+									<i class="fa-solid fa-link"></i>
+								</span>
+							</div>
+						</div>
+						<div class="content-blog">
+							<h3>Se los Recomiendo a Todos</h3>
+							<span>17 Junio 2024</span>
+							<p>Después de una larga búsqueda en línea para encontrar el OXXO que me ofreciera productos frescos y de calidad directamente a mi hogar, me topé con su página web. La experiencia fue tan intuitiva y las imágenes de los productos tan apetecibles, que no pude resistirme a hacer mi pedido.
+Desde el momento en que realicé mi compra hasta que los productos llegaron a mi puerta, el servicio fue impecable. La selección de frutas y verduras frescas, junto con los productos de despensa de alta calidad, superaron mis expectativas. Además, la entrega fue puntual y todo llegó en perfecto estado.
+Estoy más que satisfecha con la experiencia y definitivamente volveré a comprar. ¡Gracias por hacer que la compra de supermercado desde casa sea tan fácil y placentera!
+							</p>
+							<div class="btn-read-more">Leer más...</div>
+						</div>
+					</div>
+					<div class="card-blog">
+						<div class="container-img">
+							<img src="https://thumbs.dreamstime.com/b/feliz-cliente-afroamericano-var%C3%B3n-recibiendo-coloridas-bolsas-de-compras-mujer-entregando-su-pedido-hombre-parado-en-la-puerta-255528367.jpg" />
+							<div class="button-group-blog">
+								<span>
+									<i class="fa-solid fa-link"></i>
+								</span>
+							</div>
+						</div>
+						<div class="content-blog">
+							<h3>Me la Pase Genia!</h3>
+							<span>28 Julio 2024</span>
+							<p>¡Qué fiesta tan increíble tuvimos gracias a su servicio excepcional! Al planear mi reunión, sabía que quería ofrecer una variedad de cervezas y licores de calidad, acompañados de deliciosas botanas, pero la idea de salir a comprar todo me abrumaba. Afortunadamente, encontré su página web y fue la solución perfecta.
+                               La selección de bebidas era extensa y tentadora, con opciones para todos los gustos, desde cervezas artesanales hasta licores finos. Y las botanas… ¡simplemente deliciosas! Pedí una variedad que incluía desde nueces y papas fritas hasta opciones más gourmet, y todo llegó a tiempo y perfectamente empacado.
+							   La facilidad de hacer el pedido en línea, la rapidez de la entrega y la calidad de los productos hicieron que mi fiesta fuera un éxito total. Mis invitados quedaron impresionados y yo pude disfrutar de la noche sin preocupaciones. ¡Gracias por brindar un servicio tan estupendo!</p>
+							<div class="btn-read-more">Leer más...</div>
+						</div>
+					</div>
+					<div class="card-blog">
+						<div class="container-img">
+							<img src="https://images.ecestaticos.com/kBzPSryAs18LptqxEJ6jwFR8Myo=/0x0:627x569/600x450/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F7ae%2F27e%2F8dd%2F7ae27e8dd25b4ad0c355e02c962180cf.jpg" alt="Imagen Blog 3" />
+							<div class="button-group-blog">
+								<span>
+									<i class="fa-solid fa-link"></i>
+								</span>
+							</div>
+						</div>
+						<div class="content-blog">
+							<h3>Se las Recomido a Todos!!!</h3>
+							<span>29 Noviembre 2022</span>
+							<p>Como alguien que ha disfrutado de la buena comida toda su vida, encontrar un servicio que me entregue platillos deliciosos y listos para comer en la comodidad de mi hogar ha sido maravilloso. Un amigo me habló de su página web y decidí probar suerte.
+                               La variedad de comidas preparadas que ofrecen es impresionante, y cada opción parecía más apetitosa que la anterior. Hice mi pedido con facilidad y la entrega fue más rápida de lo que esperaba. Al abrir la puerta, me encontré con una sonrisa amable y una selección de comidas que me recordaron a los platillos caseros de antaño.
+							   Cada bocado estaba lleno de sabor y me hizo sentir como si tuviera mi propio chef personal. La comodidad de no tener que cocinar y aún así disfrutar de una comida de calidad es algo que realmente aprecio en esta etapa de mi vida.
+							   Les estoy profundamente agradecido por ofrecer un servicio tan considerado y por hacer que mis días sean más fáciles y placenteros. ¡Seguiré siendo un cliente fiel y recomendando su página a todos mis amigos!</p>
+							<div class="btn-read-more">Leer más...</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="container container-footer">
+				<div class="menu-footer">
+					<div class="contact-info">
+						<p class="title-footer">Información de Contacto</p>
+						<ul>
+							<li>
+								Sede Central: Monterrey, Nuevo León, México
+							</li>
+							<li>Teléfono: 333-969-4657</li>
+							<li>EmaiL: atencionaclientes@oxxo.com</li>
+							<li>Atencion al Cliente sin Costo al 01 (81) 83 20 20 20</li>
+							<li>o desde Monterrey al 83 20 20 20 </li>
+						</ul>
+					</div>
+
+					<div class="information">
+						<p class="title-footer">Información</p>
+						<ul>
+							<li><a href="#">FEMSA</a></li>
+							<li><a href="#">OXXO Inmuebles</a></li>
+							<li><a href="#">OXXO Gas</a></li>
+							<li><a href="#">Preguntas Frecuentes</a></li>
+							<li><a href="#">Responsabilidad Social</a></li>
+							<li><a href="#">Factura Electronica</a></li>
+							<li><a href="#">OXXO Reclutamiento</a></li>
+						</ul>
+					</div>
+
+					<div class="my-account">
+						<p class="title-footer">Mi cuenta</p>
+						<ul>
+							<li><a href="#">Mi cuenta</a></li>
+							<li><a href="#">Historial de ordenes</a></li>
+							<li><a href="#">Lista de deseos</a></li>
+							<li><a href="#">Boletín</a></li>
+							<li><a href="#">Reembolsos</a></li>
+							<li><a href="#">Aviso de Privacidad</a></li>
+							<li><a href="#">Terminos y Condiciones</a></li>
+						</ul>
+					</div>
+
+					<div class="newsletter">
+						<p class="title-footer">Boletín informativo</p>
+
+						<div class="content">
+							<p>
+								Suscríbete para que te lleguen todas la Ofertas de nuestro Productos y te llegara muchas mas Sorpresas de la Familia OXXO como: Descuentos Exclusivos y Merchandising y Productos Gratis .
+							</p>
+							<input type="email" placeholder="Ingresa el correo aquí para Conocer Mas...">
+							<button>Suscríbete</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="Reserbados">
+					<div class="social-icons">
+						<ul>
+							<h4>¡Siguenos en Nuestras Redes Sociales!</h4>
+						</ul>
+						<span class="facebook">
+							<a href="https://www.facebook.com/OXXOTiendas"><i class=""></i><target>"_</target></a>
+							<i class="fab fa-facebook fa-lg"></i>
+						</span>
+						<span class="twitter">
+							<i class="fa-brands fa-x-twitter"></i>
+						</span>
+						<span class="instagram">
+							<i class="fa-brands fa-instagram"></i>
+						</span>
+						<span class="youtube">
+							<i class="fab fa-youtube fa-lg"></i>
+						</span>
+						<span class="TikTok">
+							<i class="fa-brands fa-tiktok"></i>
+						</span>
+					</div>
+					<img src="https://www.oxxo.com/img/logo.png" alt="Derechos Reserbados">
+				</div>
+			</div>
+		</footer>
+
+		<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+    <!-- Custom Script -->
+    <script src="scripts.js"></script>
+	</body>
+</html>
